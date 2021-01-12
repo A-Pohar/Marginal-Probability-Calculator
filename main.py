@@ -27,6 +27,16 @@ if __name__ == '__main__':
 
         probability = pow(1-prob_success, failed_trials) * prob_success
 
+    elif prob_dist == "negative binomial":
+        prob_success = float(input("What is the probability of success (enter a decimal value)?: "))
+        num_fails = int(input("How many trials will result in failure?: "))
+        num_successes = int(input("How many of these trials result in success?: "))
+
+        probability = math.comb(num_successes - 1 + num_fails, num_successes - 1) * \
+                      pow(prob_success, num_successes) *\
+                      pow(1 - prob_success, num_fails)
+        prob_x_input = num_fails
+
     elif prob_dist == "poisson":
         lamda_parameter = int(input("What will lambda be equal to?: "))
         prob_input = int(input("what will x be equal to?: "))
@@ -34,4 +44,4 @@ if __name__ == '__main__':
         probability = pow(math.e, -1 * lamda_parameter) * pow(lamda_parameter, prob_input) \
                       / math.factorial(prob_input)
 
-    print("The probability is P(X = x) = " + str(probability))
+    print("The probability is P(X = " + str(prob_x_input) + ") = " + str(probability))
