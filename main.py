@@ -21,6 +21,12 @@ if __name__ == '__main__':
         probability = math.comb(num_trials, num_successes) * pow(prob_success, num_successes) *\
                       pow(1 - prob_success, num_trials - num_successes)
 
+    elif prob_dist == "geometric":
+        prob_success = float(input("What is the probability of success (enter a decimal value)?: "))
+        failed_trials = int(input("How many trials will result in failure?: "))
+
+        probability = pow(1-prob_success, failed_trials) * prob_success
+
     elif prob_dist == "poisson":
         lamda_parameter = int(input("What will lambda be equal to?: "))
         prob_input = int(input("what will x be equal to?: "))
