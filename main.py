@@ -1,4 +1,5 @@
-import math
+from math import comb, factorial, e
+from decimal import Decimal
 
 if __name__ == '__main__':
     print("Welcome to Marginal Probability Calculator!")
@@ -12,7 +13,7 @@ if __name__ == '__main__':
             probability = prob_success
             prob_x_input = 1
         elif success_truth == "no":
-            probability = 1 - prob_success
+            probability = 1 - Decimal(str(prob_success))
             prob_x_input = 0
 
     elif prob_dist == "binomial":
@@ -20,15 +21,19 @@ if __name__ == '__main__':
         num_trials = int(input("How many trials will occur?: "))
         num_successes = int(input("How many of these trials result in success?: "))
 
-        probability = math.comb(num_trials, num_successes) * pow(prob_success, num_successes) *\
-                      pow(1 - prob_success, num_trials - num_successes)
+        prob_failure = 1 - Decimal(str(prob_success))
+        probability = comb(num_trials, num_successes) * \
+                    Decimal(str(pow(prob_success, num_successes))) *\
+                    pow(prob_failure, num_trials - num_successes)
         prob_x_input = num_successes
 
     elif prob_dist == "geometric":
         prob_success = float(input("What is the probability of success (enter a decimal value)?: "))
         failed_trials = int(input("How many trials will result in failure?: "))
 
-        probability = pow(1-prob_success, failed_trials) * prob_success
+        prob_failure = 1 - Decimal(str(prob_success))
+        probability = Decimal(str(pow(prob_failure, failed_trials))) * \
+                              Decimal(str(prob_success))
         prob_x_input = failed_trials
 
     elif prob_dist == "negative binomial":
@@ -36,17 +41,19 @@ if __name__ == '__main__':
         num_fails = int(input("How many trials will result in failure?: "))
         num_successes = int(input("How many of these trials result in success?: "))
 
-        probability = math.comb(num_successes - 1 + num_fails, num_successes - 1) * \
-                      pow(prob_success, num_successes) *\
-                      pow(1 - prob_success, num_fails)
+        prob_failure = 1 - Decimal(str(prob_success))
+        probability = comb(num_successes - 1 + num_fails, num_successes - 1) * \
+                      Decimal(str(pow(prob_success, num_successes))) *\
+                      Decimal(str(pow(prob_failure, num_fails)))
         prob_x_input = num_fails
 
     elif prob_dist == "poisson":
-        lamda_parameter = int(input("What will lambda be equal to?: "))
+        lamda_parameter = Decimal(input("What will lambda be equal to?: "))
         prob_input = int(input("what will x be equal to?: "))
 
-        probability = pow(math.e, -1 * lamda_parameter) * pow(lamda_parameter, prob_input) \
-                      / math.factorial(prob_input)
+        decimal_e = Decimal(str(e))
+        probability = Decimal(str(pow(decimal_e, -1 * lamda_parameter))) * \
+                      Decimal(str(pow(lamda_parameter, prob_input))) / factorial(prob_input)
         prob_x_input = prob_input
 
     print("The probability is P(X = " + str(prob_x_input) + ") = " + str(probability))

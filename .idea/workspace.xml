@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3aeb8a53-fb68-40ad-83e7-82fcec883ce6" name="Default Changelist" comment="Implemented Binomial distribution.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -208,7 +209,21 @@
       <option name="project" value="LOCAL" />
       <updated>1610463932991</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Implemented Binomial, Geometric, and Negative Binomial distributions">
+      <created>1610466264913</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1610466264913</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Implemented Binomial, Geometric, and Negative Binomial distributions.">
+      <created>1610466272984</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1610466272984</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -227,6 +242,8 @@
     <MESSAGE value="Implemented Bernoulli and Poisson distribution calculations." />
     <MESSAGE value="Implemented Binomial distribution." />
     <MESSAGE value="Implemented Geometric distribution." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Geometric distribution." />
+    <MESSAGE value="Implemented Binomial, Geometric, and Negative Binomial distributions" />
+    <MESSAGE value="Implemented Binomial, Geometric, and Negative Binomial distributions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Binomial, Geometric, and Negative Binomial distributions." />
   </component>
 </project>
